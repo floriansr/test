@@ -1,9 +1,10 @@
 import React from "react";
 
-const MeteoCard = ({ cityname }: MeteoCard) => {
+const MeteoCard = ({ cityname, countrycode }: MeteoCard) => {
 	return (
 		<>
 			<p>{cityname}</p>
+			<p>{countrycode}</p>
 		</>
 	);
 };
