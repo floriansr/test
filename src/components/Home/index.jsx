@@ -10,15 +10,6 @@ const Home = () => {
 			<p>
 				<FormattedMessage id="Titre" />
 			</p>
-			<p>
-				<FormattedMessage id="Présentation" />
-			</p>
-			<p>
-				<FormattedMessage id="Travaux" />
-			</p>
-			<p>
-				<FormattedMessage id="Contact" />
-			</p>
 
 			<button type="button" onClick={() => setLanguage("en")}>
 				English
