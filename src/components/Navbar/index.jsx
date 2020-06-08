@@ -1,39 +1,49 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux"
 
-import LanguagesContext from "context/LanguagesContext";
-import fr from "assets/img/fr.png";
-import uk from "assets/img/uk.png";
+import { removeConnexion } from "../../redux";
+
 
 const Navbar = () => {
-	const { language, setLanguage } = useContext(LanguagesContext);
+	const dispatch=useDispatch()
+	const history=useHistory()
+	const token = useSelector(state => state.user.data.jwt);
+
+
+	const deconnexion = () => {
+
+		    fetch('http://localhost:8080/users/sign_out.json', {
+		      method: 'delete',
+		      headers: {
+		        'Authorization': token, 
+		        'Content-Type': 'application/json'
+		      },
+		    })
+		      .then(response =>{ 
+		      	if (response.statusText === "No Content") {
+		      		dispatch(removeConnexion())
+		      		history.push("/login")
+		     	}
+		      else
+		      	response.json()})
+		      .then(response => {
+		      	console.log(response)
+		      })
+		      .catch(error => console.log(error));
+	};
+
 
 	return (
 		<>
 			<div>
+				<button type="button" onClick={deconnexion}>Deconnexion</button>
+
 				<Link to="/">Home</Link>
 				<Link to="/about">About</Link>
-
-				<div>
-					{language === "en" ? (
-						<img
-							src={fr}
-							width="50px"
-							height="50px"
-							alt=""
-							onClick={() => setLanguage("fr")}
-						/>
-					) : (
-						<img
-							src={uk}
-							width="50px"
-							height="50px"
-							alt=""
-							onClick={() => setLanguage("en")}
-						/>
-					)}
-				</div>
+				<Link to="/profile">Profile</Link>
+				<Link to="/register">Register</Link>
 			</div>
 		</>
 	);
