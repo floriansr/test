@@ -1,0 +1,2 @@
+export const PROFILE = "PROFILE";
+// export const MODIFICATE_MY_PROFILE = "MODIFICATE_MY_PROFILE";

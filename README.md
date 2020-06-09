@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### THP Gram React/RailsAPI
 
-## Available Scripts
+## Application
 
-In the project directory, you can run:
+Now that you have created your JSON API with Rails, it's time to use it from a React app to be able to use the datas and format them!
 
-### `yarn start`
+## Topic
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+You just signed your first contract as a young freelance developer. Wow, classy! A client would like you to help him revisit Instagram, renamed THPGram for the occasion. Now that you're starting to get the hang of it, we can take you on your own and put you through your paces in a real-world application.
 
-### `yarn test`
+For this application, your only indications will be user stories as often in a real professional project. So it's up to you to organize your UI, your routes, your datas (even if I strongly advise you to use Redux), etc... The goal is just that the user can do everything he asked for.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Here is the list of stories:
 
-### `yarn build`
+If he doesn't have an account, the user must be able to register in the application.
+The user must be able to authenticate in the application.
+If not authenticated, the user is redirected to the login page.
+The user must be able to disconnect from the application (and his token will no longer be valid).
+The user must be able to delete his account
+The user must be able to consult his user profile :
+Username
+First name/Last name
+Email
+Date of registration
+The user must be able to edit his profile (email, first name, last name).
+The user must be able to upload an image with a description.
+The user must be able to modify the description of one of his images.
+The user must be able to delete one of his images
+The user must be able to consult his images
+The user must be able to consult a list of images ordered by date for all users.
+By clicking on an image, the user must be able to consult a particular image with its comments.
+The user must be able to comment on an image
+The user must be able to delete one of his comments.
+3. Bonus
+The user can pass an image in private and it becomes visible only to the user.
+The user must be able to see the username of the person who uploaded the image.
+By clicking on the username, the user can consult the profile page of the username he has clicked on and thus see :
+His username
+His First Name/Last Name
+His Email
+Its date of registration
+His image list
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git clone https://github.com/floriansr/THPGram.git
+```
 
-### `yarn eject`
+```
+cd THPGram
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   **Florian Sueur** - _Initial work_ - (https://github.com/floriansr)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Kata written by Matthieu BRAULT for the next-react formation from TheHackingProject

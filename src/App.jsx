@@ -1,16 +1,40 @@
-import React, { useState, useEffect } from "react";
-import Example from "components/Example";
+import React from "react";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "redux/store";
+
+import Navbar from "components/Navbar";
+import Authroute from "components/AuthRoute"
+
+import Register from "pages/Register";
+import LogIn from "pages/Login";
+import Home from "pages/Home";
+import About from "pages/About";
+import Profile from "pages/Profile";
+
 
 const App = () => {
-	const [data, setData] = useState("");
-
-	useEffect(() => {
-		setData();
-	}, []);
 
 	return (
 		<>
-			<Example name={data} />
+				<Router>
+					<div>
+						<Provider store={store}>
+
+							<Navbar />
+
+							<Switch>
+								<Route path="/register" component={Register} />
+                				<Route path="/login" component={LogIn} />
+								<Route path="/about" component={About} />
+								
+								<Authroute path="/profile" component={Profile} />
+								<Authroute path="/" component={Home} />
+							</Switch>
+			            </Provider>
+					</div>
+				</Router>
 		</>
 	);
 };

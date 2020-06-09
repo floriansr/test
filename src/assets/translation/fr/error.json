@@ -1,0 +1,7 @@
+{
+	"error.field": "Veuillez remplir tous les champs",
+	"error.password.numberchar": "Votre mot de passe doit contenir au moins 8 caractères",
+	"error.password.match": "Vos 2 mots de passe ne correspondent pas",
+	"error.mail.format": "Mauvais format d'email",
+	"error.tel.format": "Mauvais format du numéro de téléphone"
+}
